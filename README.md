@@ -2,6 +2,7 @@
 
 ## Bangkit-Capstone-C23-PS468
 Glowsist (Glow Assistant) is a SkinCare Recommendation system using AI to help people find the best skincare ingredients for their specific skin type and concerns. The problem we are addressing is the massive variety of skincare products available on the market. According to BPOM, there are already 411,410 skincare products in 2022, which makes it difficult for people to choose the right products that will work for their skin. Also, as reported by the Zap Beauty Index survey, Indonesian women (50.1%) have the highest percentage of skin-related insecurities, followed by size or weight agency (44.9%). 
+
 The research question we are trying to solve are: How to make this application more user-friendly? What kind of Machine Learning model can give the best recommendation?   Thus, Our project aims to provide a solution to this problem by offering personalized recommendations for skincare ingredients using AI. We are focused on developing a system that can accurately analyze a user's skin type and concerns by scanning their faces and asking several questions. With this application, we are trying to make skincare more accessible and effective for everyone, regardless of their knowledge or experience in the field.
 
 
