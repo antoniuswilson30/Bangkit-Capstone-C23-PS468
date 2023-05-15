@@ -5,7 +5,7 @@
 | Name | Bangkit ID   |  Learning Path | Github Profile   |
 | ------------ | ------------ | ------------ | ------------ |
 | Dilla Nur Fadhilla  |  M122DKY4648 |  Machine Learning |   |
-| Wilson  | M213DSX0226  |  Machine Learning | [Links](https://github.com/antoniuswilson30) |
+| Wilson  | M213DSX0226  |  Machine Learning | [Profile](https://github.com/antoniuswilson30) |
 | Arif Muhamad Iqbal  | A122DKX4768  |  Mobile Development |   |
 |  Nauval Laudza Munadjat Pattinggi | A304DKX4484  |  Mobile Development |   |
 |  Herlin Rifalika | C028DSY0909  | Cloud Computing  |   |
