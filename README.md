@@ -8,7 +8,7 @@ The research question we are trying to solve are: How to make this application m
 
 | Name | Bangkit ID   |  Learning Path | Github Profile   |
 | ------------ | ------------ | ------------ | ------------ |
-| Dilla Nur Fadhilla  |  M122DKY4648 |  Machine Learning |   |
+| Dilla Nur Fadhilla  |  M122DKY4648 |  Machine Learning | [Profile](https://github.com/fadhilla28)  |
 | Wilson  | M213DSX0226  |  Machine Learning | [Profile](https://github.com/antoniuswilson30) |
 | Arif Muhamad Iqbal  | A122DKX4768  |  Mobile Development |  [Profile](https://github.com/ariefroihannurrahman) |
 |  Nauval Laudza Munadjat Pattinggi | A304DKX4484  |  Mobile Development |   |
