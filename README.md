@@ -10,8 +10,8 @@ The research question we are trying to solve are: How to make this application m
 | ------------ | ------------ | ------------ | ------------ |
 | Dilla Nur Fadhilla  |  M122DKY4648 |  Machine Learning | [Profile](https://github.com/fadhilla28)  |
 | Wilson  | M213DSX0226  |  Machine Learning | [Profile](https://github.com/antoniuswilson30) |
-| Arif Muhamad Iqbal  | A122DKX4768  |  Mobile Development |  [Profile](https://github.com/ariefroihannurrahman) |
+| Arif Muhamad Iqbal  | A122DKX4768  |  Mobile Development |   |
 |  Nauval Laudza Munadjat Pattinggi | A304DKX4484  |  Mobile Development |   |
 |  Herlin Rifalika | C028DSY0909  | Cloud Computing  |   |
-|  Arief Roihan Nur Rahman |  C122DKX4624 | Cloud Computing  |   |
+|  Arief Roihan Nur Rahman |  C122DKX4624 | Cloud Computing  | [Profile](https://github.com/ariefroihannurrahman) |
 
