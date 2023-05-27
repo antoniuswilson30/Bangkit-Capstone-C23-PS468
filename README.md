@@ -12,6 +12,6 @@ The research question we are trying to solve are: How to make this application m
 | Wilson  | M213DSX0226  |  Machine Learning | [Profile](https://github.com/antoniuswilson30) |
 | Arif Muhamad Iqbal  | A122DKX4768  |  Mobile Development |   |
 |  Nauval Laudza Munadjat Pattinggi | A304DKX4484  |  Mobile Development |   |
-|  Herlin Rifalika | C028DSY0909  | Cloud Computing  |   |
+|  Herlin Rifalika | C028DSY0909  | Cloud Computing  | [Profile](https://github.com/Rifalika) |
 |  Arief Roihan Nur Rahman |  C122DKX4624 | Cloud Computing  | [Profile](https://github.com/ariefroihannurrahman) |
 
