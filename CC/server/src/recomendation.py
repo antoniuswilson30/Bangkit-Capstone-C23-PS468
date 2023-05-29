@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
-import random
-from collections import Counter
 
 def calculate_cosine_similarity(p1, p2):
     dot_product = np.dot(p1, p2)
@@ -106,7 +104,7 @@ def recommend_products_by_ingredient(search_term, df, matrix_ingredients):
     x = 0
     ingredient_array = []
     for ingredient, count in sorted_output:
-        print(f"{ingredient}\t{count}")
+        # print(f"{ingredient}\t{count}")
         x += 1
         ingredient_array.append(ingredient)
         if x == 5:

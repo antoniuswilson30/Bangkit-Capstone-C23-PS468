@@ -1,6 +1,6 @@
 from flask import Flask
 import pandas as pd
-from models.recomendation import *
+from models.RecomendationModels import RecomendationModels
 
 app = Flask(__name__)
 
@@ -8,8 +8,13 @@ app = Flask(__name__)
 def routers():
 	return 'Router Success'
 
-@app.route('/v1/r/q/recomendation', methods=['GET'])
-def getData():
+@app.route('/v1/r/q/face-scanning', methods=['GET'])
+def face_scanning():
+
+	return "response Success"
+
+@app.route('/v1/r/q/recomendations', methods=['GET'])
+def recomendation():
 	df = pd.read_csv('https://drive.google.com/uc?id=1LQZ169gDcvE1hRqKWmostIh31gbmvH9v', delimiter = ',')
 
 	list_ingredients = []
@@ -42,5 +47,5 @@ def getData():
 	matrix_ingredients = pd.DataFrame(one_hot_list).transpose()
 	matrix_ingredients.columns = [sorted(set(list_ingredients))]
 
-	ingredients = recommend_products_by_ingredient('salicylic acid', df=df, matrix_ingredients=matrix_ingredients)
-	return ingredients
+	recomendation = RecomendationModels(df, matrix_ingredients)
+	return recomendation.recommend_products_by_ingredient('salicylic acid')
