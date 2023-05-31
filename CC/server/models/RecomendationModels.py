@@ -94,6 +94,49 @@ class RecomendationModels:
         ingredient_counts = pd.Series(ingredients_list).value_counts()
 
         return ingredient_counts.head(5)
+    
+    def get_top_product(self, input_type, product):
+        df = self.dataset
+        x = 0
+        brands = []
+        output = []
+        ingredients_list = []
+        brand_search = df['brand'][df['skincare_name'] == product].iat[0]
+
+        for m in range(len(input_type)):
+            brand = input_type['brand'].iloc[x]
+            if len(brands) == 0:
+                if brand != brand_search:
+                    brands.append(brand)
+                    output.append(input_type.iloc[x])
+                    ingredients_list.append(input_type['ingredients'].iloc[x])
+            elif brands.count(brand) < 2:
+                if brand != brand_search:
+                    brands.append(brand)
+                    output.append(input_type.iloc[x])
+                    ingredients_list.append(input_type['ingredients'].iloc[x])
+            x += 1
+
+        return pd.DataFrame(output)[['skincare_name', 'product_url']].head(5) # error disini karena product urlnya tidak terbaca
+    
+    def recommend_products_by_name(self, search_term):
+        df = self.dataset
+        matching_products = df[df['ingredients'].str.contains(search_term, case=False)]
+        matching_products = matching_products.sample(frac=1)
+        num_products = min(5, len(matching_products))
+        random_products = matching_products.head(num_products)
+
+        product_array = []
+        for _, row in random_products.iterrows():
+            product = row['skincare_name']
+            recommended_products = self.recommend_products(product)
+            top_ingredients = self.get_top_product(recommended_products, product)
+            product_array.append({
+                "product_name":product
+            })
+            # print(f"{product}\n{row['product_url']}")
+
+        return product_array
 
     def recommend_products_by_ingredient(self, search_term):
         df = self.dataset

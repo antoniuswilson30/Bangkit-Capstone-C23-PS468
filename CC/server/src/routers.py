@@ -47,5 +47,10 @@ def recomendation():
 	matrix_ingredients = pd.DataFrame(one_hot_list).transpose()
 	matrix_ingredients.columns = [sorted(set(list_ingredients))]
 
+	data_post = []
+
 	recomendation = RecomendationModels(df, matrix_ingredients)
-	return recomendation.recommend_products_by_ingredient('salicylic acid')
+	data_post.append(recomendation.recommend_products_by_ingredient('salicylic acid'))
+	data_post.append(recomendation.recommend_products_by_name('salicylic acid'))
+	
+	return data_post
