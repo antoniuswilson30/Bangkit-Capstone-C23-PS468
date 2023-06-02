@@ -132,7 +132,8 @@ class RecomendationModels:
             recommended_products = self.recommend_products(product)
             top_ingredients = self.get_top_product(recommended_products, product)
             product_array.append({
-                "product_name":product
+                "product_name": product,
+                "product_url": row['product_url']
             })
             # print(f"{product}\n{row['product_url']}")
 
