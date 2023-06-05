@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/fl_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/iv_title"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/stars"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:text="Glowsist"
+            android:textColor="@color/yellow"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/tv_headline"
+        android:layout_width="190dp"
+        android:layout_height="48dp"
+        android:text="Discover the Essential Ingredients for your Perfect Skincare Routine With Glowsist"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fl_logo"/>
+    
+    <ImageView
+        android:id="@+id/iv_color"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/beauty_color"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_headline"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tb_email"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_color"
+        tools:ignore="MissingConstraints" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:hint="Email"
+            android:textSize="12sp"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tb_password"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_email"
+        tools:ignore="MissingConstraints" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:hint="Password"
+            android:textSize="12sp"
+            android:maxLines="1"/>
+        
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="82dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:text="Masuk"
+        android:textSize="11sp"
+        android:background="@drawable/header_layout"
+        app:layout_constraintTop_toBottomOf="@id/tb_password"
+        app:layout_constraintEnd_toEndOf="@id/tb_password"/>
+
+    <LinearLayout
+        android:id="@+id/ll_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_login">
+
+        <TextView
+            android:id="@+id/tv_register_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Belum mempunyai akun?"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/to_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daftar"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="2dp"
+            android:textStyle="bold"
+            android:textColor="@color/yellow" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/or_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="atau"
+        android:textSize="11sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_register" />
+
+    <TextView
+        android:id="@+id/skip_auth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lewati"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/yellow"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/or_option"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
