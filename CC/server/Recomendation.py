@@ -37,18 +37,32 @@ class RecomendationModel:
             similarity_scores.append(cos_sim)
         return similarity_scores
 
+    # def recommend_products(self, product):
+    #     df = self.dataset
+    #     similarity_scores = []
+    #     p1 = self.get_product_vector(product)
+    #     prod_type = df['skincare_type'][df['skincare_name'] == product].iat[0]
+    #     input_type = df[df['skincare_type'] == prod_type]
+    #     similarity_scores = self.calculate_similarity_scores(p1, input_type)
+
+    #     input_type = pd.DataFrame(input_type)
+    #     input_type['cos_sim'] = similarity_scores
+    #     input_type = input_type.sort_values('cos_sim', ascending=False)
+    #     input_type = input_type[input_type.skincare_name != product] 
+        
+    #     return input_type
+
     def recommend_products(self, product):
         df = self.dataset
         similarity_scores = []
         p1 = self.get_product_vector(product)
-        prod_type = df['skincare_type'][df['skincare_name'] == product].iat[0]
-        input_type = df[df['skincare_type'] == prod_type]
+        prod_type = df.loc[df['skincare_name'] == product, 'skincare_type'].iat[0]
+        input_type = df.loc[df['skincare_type'] == prod_type]
         similarity_scores = self.calculate_similarity_scores(p1, input_type)
 
-        input_type = pd.DataFrame(input_type)
         input_type['cos_sim'] = similarity_scores
         input_type = input_type.sort_values('cos_sim', ascending=False)
-        input_type = input_type[input_type.skincare_name != product] 
+        input_type = input_type[input_type['skincare_name'] != product] 
         
         return input_type
 
