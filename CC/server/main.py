@@ -15,6 +15,7 @@ def face_scanning():
     if request.method == 'GET':
         return 'Response Success'
     if request.method == 'POST':
+        image = request.files['image']
         pass
 
 @app.route('/recomendations', methods=['GET', 'POST'])
