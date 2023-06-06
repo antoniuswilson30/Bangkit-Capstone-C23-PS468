@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 scanningmodel.pkl
+templates/
 
 # C extensions
 *.so
