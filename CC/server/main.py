@@ -1,8 +1,12 @@
 from flask import Flask, request, jsonify, render_template
+from FaceDetection import Acne, Redness, SkinType
 from Recomendation import RecomendationModel
+from PIL import Image
 import pandas as pd
+import numpy as np
 
 app = Flask(__name__)
+app.template_folder = 'templates'
 url = 'https://drive.google.com/uc?id=1LQZ169gDcvE1hRqKWmostIh31gbmvH9v'
 dataset = pd.read_csv(url, delimiter=',')
 
@@ -10,23 +14,37 @@ dataset = pd.read_csv(url, delimiter=',')
 def response():
     if request.method == 'GET':
         return 'Response Success'
-    if request.method == 'POST':
-        pass
 
-# @app.route('/form', methods=['GET'])
-# def form():
-#     return render_template('index.html')
+@app.route('/form', methods=['GET'])
+def form():
+    return render_template('index.html')
 
-@app.route('/face_scanning', methods=['GET', 'POST'])
+@app.route('/scans', methods=['GET', 'POST'])
 def face_scanning():
     if request.method == 'GET':
-        return 'Response Success'
+        return 'Response Scans Success'
     if request.method == 'POST':
-        # image = request.files['image']
-        return 'Response Success'
+        image = request.files['image']
+        img = Image.open(image)
+        img = img.resize((150, 150))
+        img_array = np.array(img)
+        img_array = img_array.astype('float32')
+        img_array /= 255
+        img_array = np.expand_dims(img_array, axis=0)
+        images = np.vstack([img_array])
+
+        results = {
+            "acne": Acne().predict(images).tolist()[0],
+            "redness": Redness().predict(images).tolist()[0],
+            "skintype": SkinType().predict(images).tolist()[0]
+        }
+        
+        return jsonify(results)
 
 @app.route('/recomendations', methods=['POST'])
 def funcRecomendation():
+    if request.method == 'GET':
+        return 'Response Recomendations Success'
     if request.method == 'POST':
         form_data = {
             "acne": request.form.get('acne'),
@@ -69,74 +87,49 @@ def funcRecomendation():
 
         if form_data['acne'] == 'yes':
             results["ingredients_results"].append({
-                "acne": {
-                    "yes": recomendations.recommend_products_by_ingredient('benzoyl')
-                }
+                "acne": recomendations.recommend_products_by_ingredient('benzoyl')
             })
             results["product_results"].append({
-                "acne": {
-                    "yes": recomendations.recommend_products_by_name('benzoyl')
-                }
+                "acne": recomendations.recommend_products_by_name('benzoyl')
             })
 
         if form_data['redness'] == 'yes':
             results["ingredients_results"].append({
-                "redness": {
-                    "yes": recomendations.recommend_products_by_ingredient('sodium hyaluronate')
-                }
+                "redness": recomendations.recommend_products_by_ingredient('sodium hyaluronate')
             })
             results["product_results"].append({
-                "redness": {
-                    "yes": recomendations.recommend_products_by_name('sodium hyaluronate')
-                }
+                "redness": recomendations.recommend_products_by_name('sodium hyaluronate')
             })
 
         skintype = form_data['skintype']
         if skintype == 'oily':
             results["ingredients_results"].append({
-                "skintype": {
-                    "oily": recomendations.recommend_products_by_ingredient('salicylic acid')
-                }
+                "skintype": recomendations.recommend_products_by_ingredient('salicylic acid')
             })
             results["product_results"].append({
-                "skintype": {
-                    "oily": recomendations.recommend_products_by_name('salicylic acid')
-                }
+                "skintype": recomendations.recommend_products_by_name('salicylic acid')
             })
         elif skintype == 'dry':
             results["ingredients_results"].append({
-                "skintype": {
-                    "dry": recomendations.recommend_products_by_ingredient('squalene')
-                }
+                "skintype": recomendations.recommend_products_by_ingredient('squalene')
             })
             results["product_results"].append({
-                "skintype": {
-                    "dry": recomendations.recommend_products_by_name('squalene')
-                }
+                "skintype": recomendations.recommend_products_by_name('squalene')
+            })
+        elif skintype == 'combination':
+            results["ingredients_results"].append({
+                "skintype": recomendations.recommend_products_by_ingredient('niacinamide')
+            })
+            results["product_results"].append({
+                "skintype": recomendations.recommend_products_by_name('niacinamide')
             })
 
-        sensitivity = form_data['sensitivity']
-        if sensitivity == 'sensitive':
+        if form_data['sensitivity'] == 'sensitive':
             results["ingredients_results"].append({
-                "sensitivity": {
-                    "sensitive": recomendations.recommend_products_by_ingredient('ceramide')
-                }
+                "sensitivity": recomendations.recommend_products_by_ingredient('ceramide')
             })
             results["product_results"].append({
-                "sensitivity": {
-                    "sensitive": recomendations.recommend_products_by_name('ceramide')
-                }
-            })
-        elif sensitivity == 'verysensitive':
-            results["ingredients_results"].append({
-                "sensitivity": {
-                    "verysensitive": recomendations.recommend_products_by_ingredient('#')
-                }
-            })
-            results["product_results"].append({
-                "sensitivity": {
-                    "verysensitive": recomendations.recommend_products_by_name('#')
-                }
+                "sensitivity": recomendations.recommend_products_by_name('ceramide')
             })
 
         return jsonify(results)
