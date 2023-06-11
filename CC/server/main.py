@@ -1,38 +1,83 @@
+# Warning! This code is Local Program
+# if you want to use this code in google cloud platform
+# you must uncomment:
+    # library :
+        # from Storage import Storage
+        # import h5py
+    # code :
+        # bucket = Storage('<YOUR BUCKET NAME>')
+        # dataset_io = bucket.get_file('<YOUR DATASET NAME WITH CSV FORMAT>')
+        # model_io = bucket.get_file('<YOUR MODEL NAME>')
+        # with h5py.File(model_io, 'r') as model_path:
+        #     self.model = tf.keras.models.load_model(model_path)
+# and you must comment:
+    # code :
+        # dataset_io = 'dataset.csv'
+# beside that you must install all library. Use pip install -r requirements.txt in terminal
+
 from flask import Flask, request, jsonify, render_template
+from FaceDetection import Acne, Redness, SkinType
 from Recomendation import RecomendationModel
+from flask_cors import CORS
+# from Storage import Storage
+from io import BytesIO
+import tensorflow as tf
 import pandas as pd
+import numpy as np
 
 app = Flask(__name__)
-url = 'https://drive.google.com/uc?id=1LQZ169gDcvE1hRqKWmostIh31gbmvH9v'
-dataset = pd.read_csv(url, delimiter=',')
+CORS(app)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def response():
     if request.method == 'GET':
         return 'Response Success'
-    if request.method == 'POST':
-        pass
 
-# @app.route('/form', methods=['GET'])
+# @app.route('/form', methods=['GET', 'POST'])
 # def form():
 #     return render_template('index.html')
 
-@app.route('/face_scanning', methods=['GET', 'POST'])
-def face_scanning():
+@app.route('/scans', methods=['GET', 'POST'])
+def scans():
     if request.method == 'GET':
-        return 'Response Success'
+        return 'Response Scans Success'
     if request.method == 'POST':
-        # image = request.files['image']
-        return 'Response Success'
+        image = request.files['image']
+        # print(image.filename)
+        image_bytes = image.read()
+        img_io = BytesIO(image_bytes)
+        # print(img_io)
+        img = tf.keras.utils.load_img(img_io, target_size=(150, 150))
+        img_array = tf.keras.utils.img_to_array(img)
+        # print(img_array)
+        img_array /= 255
+        img_array = np.expand_dims(img_array, axis=0)
+        images = np.vstack([img_array])
 
-@app.route('/recomendations', methods=['POST'])
-def funcRecomendation():
+        results = {
+            "acne": Acne().predict(images).tolist()[0],
+            "redness": Redness().predict(images).tolist()[0],
+            "skintype": SkinType().predict(images).tolist()[0]
+        }
+        
+        return jsonify(results)
+
+@app.route('/recomendations', methods=['GET','POST'])
+def recomendations():
+    if request.method == 'GET':
+        return 'Response Recomendations Success'
     if request.method == 'POST':
+        # bucket = Storage('new-ml-models')
+        # dataset_io = bucket.get_file('dataset.csv')
+        dataset_io = 'datasets/dataset.csv'
+        dataset = pd.read_csv(dataset_io, delimiter=',')
+        data = request.get_json()
+        
         form_data = {
-            "acne": request.form.get('acne'),
-            "redness": request.form.get('redness'),
-            "skintype": request.form.get('skintype'),
-            "sensitivity": request.form.get('sensitivity')
+            "acne": data['acne'],
+            "redness": data['redness'],
+            "skintype": data['skintype'],
+            "sensitivity": data['sensitivity']
         }
         
         results = {
@@ -69,74 +114,49 @@ def funcRecomendation():
 
         if form_data['acne'] == 'yes':
             results["ingredients_results"].append({
-                "acne": {
-                    "yes": recomendations.recommend_products_by_ingredient('benzoyl')
-                }
+                "acne": recomendations.recommend_products_by_ingredient('benzoyl')
             })
             results["product_results"].append({
-                "acne": {
-                    "yes": recomendations.recommend_products_by_name('benzoyl')
-                }
+                "acne": recomendations.recommend_products_by_name('benzoyl')
             })
 
         if form_data['redness'] == 'yes':
             results["ingredients_results"].append({
-                "redness": {
-                    "yes": recomendations.recommend_products_by_ingredient('sodium hyaluronate')
-                }
+                "redness": recomendations.recommend_products_by_ingredient('sodium hyaluronate')
             })
             results["product_results"].append({
-                "redness": {
-                    "yes": recomendations.recommend_products_by_name('sodium hyaluronate')
-                }
+                "redness": recomendations.recommend_products_by_name('sodium hyaluronate')
             })
 
         skintype = form_data['skintype']
         if skintype == 'oily':
             results["ingredients_results"].append({
-                "skintype": {
-                    "oily": recomendations.recommend_products_by_ingredient('salicylic acid')
-                }
+                "skintype": recomendations.recommend_products_by_ingredient('salicylic acid')
             })
             results["product_results"].append({
-                "skintype": {
-                    "oily": recomendations.recommend_products_by_name('salicylic acid')
-                }
+                "skintype": recomendations.recommend_products_by_name('salicylic acid')
             })
         elif skintype == 'dry':
             results["ingredients_results"].append({
-                "skintype": {
-                    "dry": recomendations.recommend_products_by_ingredient('squalene')
-                }
+                "skintype": recomendations.recommend_products_by_ingredient('squalene')
             })
             results["product_results"].append({
-                "skintype": {
-                    "dry": recomendations.recommend_products_by_name('squalene')
-                }
+                "skintype": recomendations.recommend_products_by_name('squalene')
+            })
+        elif skintype == 'combination':
+            results["ingredients_results"].append({
+                "skintype": recomendations.recommend_products_by_ingredient('niacinamide')
+            })
+            results["product_results"].append({
+                "skintype": recomendations.recommend_products_by_name('niacinamide')
             })
 
-        sensitivity = form_data['sensitivity']
-        if sensitivity == 'sensitive':
+        if form_data['sensitivity'] == 'sensitive':
             results["ingredients_results"].append({
-                "sensitivity": {
-                    "sensitive": recomendations.recommend_products_by_ingredient('ceramide')
-                }
+                "sensitivity": recomendations.recommend_products_by_ingredient('ceramide')
             })
             results["product_results"].append({
-                "sensitivity": {
-                    "sensitive": recomendations.recommend_products_by_name('ceramide')
-                }
-            })
-        elif sensitivity == 'verysensitive':
-            results["ingredients_results"].append({
-                "sensitivity": {
-                    "verysensitive": recomendations.recommend_products_by_ingredient('#')
-                }
-            })
-            results["product_results"].append({
-                "sensitivity": {
-                    "verysensitive": recomendations.recommend_products_by_name('#')
-                }
+                "sensitivity": recomendations.recommend_products_by_name('ceramide')
             })
 
         return jsonify(results)
