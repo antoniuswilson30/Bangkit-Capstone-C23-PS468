@@ -5,9 +5,6 @@ __pycache__/
 scanningmodel.pkl
 templates/
 key.json
-acne.h5
-redness.h5
-skintype.h5
 
 
 # C extensions

@@ -1,34 +1,55 @@
+# Warning! This code is Local Program
+# if you want to use this code in google cloud platform
+# you must uncomment:
+    # library :
+        # from Storage import Storage
+        # import h5py
+    # code :
+        # bucket = Storage('<YOUR BUCKET NAME>')
+        # dataset_io = bucket.get_file('<YOUR DATASET NAME WITH CSV FORMAT>')
+        # model_io = bucket.get_file('<YOUR MODEL NAME>')
+        # with h5py.File(model_io, 'r') as model_path:
+        #     self.model = tf.keras.models.load_model(model_path)
+# and you must comment:
+    # code :
+        # dataset_io = 'dataset.csv'
+# beside that you must install all library. Use pip install -r requirements.txt in terminal
+
 from flask import Flask, request, jsonify, render_template
 from FaceDetection import Acne, Redness, SkinType
 from Recomendation import RecomendationModel
-from PIL import Image
+from flask_cors import CORS
+# from Storage import Storage
+from io import BytesIO
+import tensorflow as tf
 import pandas as pd
 import numpy as np
 
 app = Flask(__name__)
-app.template_folder = 'templates'
-url = 'https://drive.google.com/uc?id=1LQZ169gDcvE1hRqKWmostIh31gbmvH9v'
-dataset = pd.read_csv(url, delimiter=',')
+CORS(app)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def response():
     if request.method == 'GET':
         return 'Response Success'
 
-@app.route('/form', methods=['GET'])
+@app.route('/form', methods=['GET', 'POST'])
 def form():
     return render_template('index.html')
 
 @app.route('/scans', methods=['GET', 'POST'])
-def face_scanning():
+def scans():
     if request.method == 'GET':
         return 'Response Scans Success'
     if request.method == 'POST':
         image = request.files['image']
-        img = Image.open(image)
-        img = img.resize((150, 150))
-        img_array = np.array(img)
-        img_array = img_array.astype('float32')
+        # print(image.filename)
+        image_bytes = image.read()
+        img_io = BytesIO(image_bytes)
+        # print(img_io)
+        img = tf.keras.utils.load_img(img_io, target_size=(150, 150))
+        img_array = tf.keras.utils.img_to_array(img)
+        # print(img_array)
         img_array /= 255
         img_array = np.expand_dims(img_array, axis=0)
         images = np.vstack([img_array])
@@ -41,16 +62,22 @@ def face_scanning():
         
         return jsonify(results)
 
-@app.route('/recomendations', methods=['POST'])
-def funcRecomendation():
+@app.route('/recomendations', methods=['GET','POST'])
+def recomendations():
     if request.method == 'GET':
         return 'Response Recomendations Success'
     if request.method == 'POST':
+        # bucket = Storage('new-ml-models')
+        # dataset_io = bucket.get_file('dataset.csv')
+        dataset_io = 'datasets/dataset.csv'
+        dataset = pd.read_csv(dataset_io, delimiter=',')
+        data = request.get_json()
+        
         form_data = {
-            "acne": request.form.get('acne'),
-            "redness": request.form.get('redness'),
-            "skintype": request.form.get('skintype'),
-            "sensitivity": request.form.get('sensitivity')
+            "acne": data['acne'],
+            "redness": data['redness'],
+            "skintype": data['skintype'],
+            "sensitivity": data['sensitivity']
         }
         
         results = {
