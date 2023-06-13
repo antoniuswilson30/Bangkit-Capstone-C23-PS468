@@ -1,5 +1,7 @@
 ![bangkit-logo copy](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/969176ac-f6a2-426e-93bb-0eeb98704762)
 
+![](https://img.shields.io/github/last-commit/antoniuswilson30/Bangkit-Capstone-C23-PS468?style=flat-square) ![](https://img.shields.io/github/commit-activity/t/antoniuswilson30/Bangkit-Capstone-C23-PS468?color=lightgray&style=flat-square) ![](https://img.shields.io/github/release-date/antoniuswilson30/Bangkit-Capstone-C23-PS468?color=yellow&style=flat-square) ![](https://img.shields.io/github/repo-size/antoniuswilson30/Bangkit-Capstone-C23-PS468?label=size&style=flat-square) 
+
 ## Bangkit-Capstone-C23-PS468
 
 Glowsist (Glow Assistant) is a SkinCare Recommendation system using AI to help people find the best skincare ingredients for their specific skin type and concerns. The problem we are addressing is the massive variety of skincare products available on the market. According to BPOM, there are already 411,410 skincare products in 2022, which makes it difficult for people to choose the right products that will work for their skin. Also, as reported by the Zap Beauty Index survey, Indonesian women (50.1%) have the highest percentage of skin-related insecurities, followed by size or weight agency (44.9%). 
@@ -19,7 +21,7 @@ The research question we are trying to solve are: How to make this application m
 
 ------------
 
-#### Build With
+### Build With
 
 - [Android Studio](https://developer.android.com/studio)
 - [TensorFlow](https://www.tensorflow.org/)
@@ -31,7 +33,7 @@ The research question we are trying to solve are: How to make this application m
 
 ------------
 
-#### Running Our Project in Local
+### Running Our Project in Local
 
 - [ ] Clone this Github [repository](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468)
 - [ ] Step 2
@@ -40,7 +42,7 @@ The research question we are trying to solve are: How to make this application m
 
 ------------
 
-#### Prerequisites
+### Prerequisites
 
 Download the latest version of 
 - [Install TensorFlow](https://www.tensorflow.org/install)
@@ -51,3 +53,4 @@ Or run this following commands one by one for installing TensorFlow:
     pip install --upgrade pip
 	pip install tensorflow
     python -m pip install tensorflow
+    
