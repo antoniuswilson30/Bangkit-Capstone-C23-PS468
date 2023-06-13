@@ -33,7 +33,7 @@ The research question we are trying to solve are: How to make this application m
 
 ------------
 
-### Create Model
+### Create Machine Learning Model
 
 This project use Skin Concerns and SkinCare Ingredients as training and testing dataset. These datasets are collected from [Ingredients](https://www.kaggle.com/datasets/eward96/skincare-products-and-their-ingredients),  [Acne](https://www.kaggle.com/datasets/nayanchaure/acne-dataset?select=Acne), and  [Dermnet](https://www.kaggle.com/datasets/shubhamgoel27/dermnet). For analyzing face image, this project is using Convolutional Neural Network (CNN) which classifies the image into two classes. To optimize accuracy, this project use [InceptionV3](https://keras.io/api/applications/inceptionv3/) as pre-trained model provided by Keras. The recommendation system use Collaborative Filtering Model to finding most used skincare ingredients based on cosine similarity.
 
