@@ -15,3 +15,12 @@ The research question we are trying to solve are: How to make this application m
 |  Herlin Rifalika | C028DSY0909  | Cloud Computing  | [Profile](https://github.com/Rifalika) |
 |  Arief Roihan Nur Rahman |  C122DKX4624 | Cloud Computing  | [Profile](https://www.linkedin.com/in/arief-roihan-nur-rahman-b34777201/) |
 
+####Build With
+
+- [Android Studio](https://developer.android.com/studio)
+- [TensorFlow](https://www.tensorflow.org/)
+- [Cloud Run](https://cloud.google.com/run)
+- [Flutter](https://flutter.dev/)
+- [Python](https://www.python.org/)
+- [Pandas](https://pandas.pydata.org/)
+- [Flask](https://flask.palletsprojects.com/en/2.3.x/)
