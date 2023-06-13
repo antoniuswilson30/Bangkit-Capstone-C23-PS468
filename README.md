@@ -72,7 +72,7 @@ Or run this following commands one by one for installing TensorFlow:
 
 Our Glowsist Project is open to contributions, and we highly appreciate anyone who wishes to contribute and carry forward our project.
     #Fork the project
-	git checkout -b feature/NewFeature #Create Feature Branch
+    git checkout -b feature/NewFeature #Create Feature Branch
     git commit -m 'Add New Feature' #Commit changes
-	git push origin feature/NewFeature #Push to branch
-	#Create new Pull Request
+    git push origin feature/NewFeature #Push to branch
+    #Create new Pull Request
