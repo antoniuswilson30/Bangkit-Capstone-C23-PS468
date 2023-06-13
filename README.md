@@ -33,7 +33,7 @@ The research question we are trying to solve are: How to make this application m
 
 #### Running Our Project in Local
 
-- [ ] Clone this [repository](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468)
+- [ ] Clone this Github [repository](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468)
 - [ ] Step 2
 - [ ] Step 3
 - [ ] Step 4
@@ -42,9 +42,11 @@ The research question we are trying to solve are: How to make this application m
 
 #### Prerequisites
 
-Download the latest version of [TensorFlow](https://www.tensorflow.org/install)
+Download the latest version of 
+- [Install TensorFlow](https://www.tensorflow.org/install)
+- [Android Studio](https://developer.android.com/?hl=id)
 
-Or run this following commands one by one:
+Or run this following commands one by one for installing TensorFlow:
 
     pip install --upgrade pip
 	pip install tensorflow
