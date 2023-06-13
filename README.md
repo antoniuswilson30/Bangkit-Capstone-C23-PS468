@@ -36,7 +36,7 @@ The research question we are trying to solve are: How to make this application m
 ### Running This Project in Local
 
 - [ ] Clone this Github [repository](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468)
-- [ ] Run all the face scanning model and save in H5 format
+- [ ] Run all the face scanning model and save in H5 format, or you can download and use this [model](https://drive.google.com/drive/folders/1REkjKwxVPstBOLDIDGNECJGZTUvlIWev?usp=sharing) instead of train it from the beginning 
 - [ ] Step 3
 - [ ] Step 4
 
