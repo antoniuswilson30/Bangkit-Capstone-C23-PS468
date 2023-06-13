@@ -41,6 +41,7 @@ This project use Skin Concerns and SkinCare Ingredients as training and testing 
 <summary>CNN Architecture</summary>
 <img width="504" alt="image" src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/af385a89-9708-46c4-abad-2b6ed0bb914d">
 </details>
+
 ------------
 
 
