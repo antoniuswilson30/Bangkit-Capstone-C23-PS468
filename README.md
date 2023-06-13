@@ -33,10 +33,10 @@ The research question we are trying to solve are: How to make this application m
 
 ------------
 
-### Running Our Project in Local
+### Running This Project in Local
 
 - [ ] Clone this Github [repository](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468)
-- [ ] Step 2
+- [ ] Run all the face scanning model and save in H5 format
 - [ ] Step 3
 - [ ] Step 4
 
