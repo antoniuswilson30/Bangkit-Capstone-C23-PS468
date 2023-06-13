@@ -6,12 +6,12 @@ Glowsist (Glow Assistant) is a SkinCare Recommendation system using AI to help p
 The research question we are trying to solve are: How to make this application more user-friendly? What kind of Machine Learning model can give the best recommendation?   Thus, Our project aims to provide a solution to this problem by offering personalized recommendations for skincare ingredients using AI. We are focused on developing a system that can accurately analyze a user's skin type and concerns by scanning their faces and asking several questions. With this application, we are trying to make skincare more accessible and effective for everyone, regardless of their knowledge or experience in the field.
 
 
-| Name | Bangkit ID   |  Learning Path | Github Profile   |
+| Name | Bangkit ID   |  Learning Path | Profile   |
 | ------------ | ------------ | ------------ | ------------ |
-| Dilla Nur Fadhilla  |  M122DKY4648 |  Machine Learning | [Profile](https://github.com/fadhilla28)  |
-| Wilson  | M213DSX0226  |  Machine Learning | [Profile](https://github.com/antoniuswilson30) |
-| Arif Muhamad Iqbal  | A122DKX4768  |  Mobile Development |   |
-|  Nauval Laudza Munadjat Pattinggi | A304DKX4484  |  Mobile Development |   |
+| Dilla Nur Fadhilla  |  M122DKY4648 |  Machine Learning | [Profile](www.linkedin.com/in/dillanurfadhilla)  |
+| Wilson  | M213DSX0226  |  Machine Learning | [Profile](https://www.linkedin.com/in/antoniuswilson30) |
+| Arif Muhamad Iqbal  | A122DKX4768  |  Mobile Development |[Profile](https://www.linkedin.com/in/arif-muhamad-iqbal)   |
+|  Nauval Laudza Munadjat Pattinggi | A304DKX4484  |  Mobile Development | [Profile](https://www.linkedin.com/in/nauvallmp/)   |
 |  Herlin Rifalika | C028DSY0909  | Cloud Computing  | [Profile](https://github.com/Rifalika) |
-|  Arief Roihan Nur Rahman |  C122DKX4624 | Cloud Computing  | [Profile](https://github.com/ariefroihannurrahman) |
+|  Arief Roihan Nur Rahman |  C122DKX4624 | Cloud Computing  | [Profile](https://www.linkedin.com/in/arief-roihan-nur-rahman-b34777201/) |
 
