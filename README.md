@@ -44,6 +44,20 @@ This project use Skin Concerns and SkinCare Ingredients as training and testing 
 
 ------------
 
+### Connecting to Server
+
+We created an API using the Python programming language with the Flask Framework for backend face detection, product recommendations, and fetching datasets from cloud storage.
+
+##### Cloud Run
+For servers, we are using Cloud Run for the backend and Cloud Storage to store datasets and models. We chose to deploy the backend on Cloud Run because it's serverless for our containerized applications in the future, and store datasets and models on Cloud Storage because it's easy to use and low cost.
+
+<details>
+<summary>Virtual Machine</summary>
+<img width="504" alt="image" src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/b5e6db7e-a4a6-4aa6-a376-517f34941acf">
+</details>
+
+------------
+
 ### Project Preview
 
 We build an android application for end user so everyone can use our application. Also, this project is using Flutter so it can be easier if someone want to develop in IOS.
