@@ -44,6 +44,19 @@ This project use Skin Concerns and SkinCare Ingredients as training and testing 
 
 ------------
 
+### Project Preview
+
+We build an android application for end user so everyone can use our application. Also, this project is using Flutter so it can be easier if someone want to develop in IOS.
+
+![home](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/9a17e225-dde0-4835-95d6-dfca168f0637)
+![WhatsApp Image 2023-06-14 at 15 13 06](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/c1fc6a74-4ac2-412e-ae0e-e532354605c3)
+![WhatsApp Image 2023-06-14 at 15 13 08](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/7327e332-6d67-46a1-aee3-ac317386bb11)
+![WhatsApp Image 2023-06-14 at ](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/caccc66a-4c23-4b37-800c-0b5235bd4a7f)
+![WhatsApp Image 2023-06-14 at 15 13 09](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/4c558eda-4eb9-443e-aa79-14d74939b4ec)![WhatsApp Image 2023-06-14 at 15 13 10](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/30054a07-52ee-407e-9767-7fff7297d22a)
+
+
+
+------------
 
 ### Run Project in Local
 
