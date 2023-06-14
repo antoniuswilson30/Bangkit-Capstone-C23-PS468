@@ -33,9 +33,9 @@ def response():
     if request.method == 'GET':
         return 'Response Success'
 
-# @app.route('/form', methods=['GET', 'POST'])
-# def form():
-#     return render_template('index.html')
+@app.route('/form', methods=['GET', 'POST'])
+def form():
+    return render_template('index.html')
 
 @app.route('/scans', methods=['GET', 'POST'])
 def scans():
