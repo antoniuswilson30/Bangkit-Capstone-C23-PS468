@@ -30,6 +30,7 @@ The research question we are trying to solve are: How to make this application m
 - [Python](https://www.python.org/)
 - [Pandas](https://pandas.pydata.org/)
 - [Flask](https://flask.palletsprojects.com/en/2.3.x/)
+- [Cloud Storage](https://cloud.google.com/storage)
 
 ------------
 
