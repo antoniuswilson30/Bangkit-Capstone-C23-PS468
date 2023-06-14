@@ -21,6 +21,10 @@ The research question we are trying to solve are: How to make this application m
 
 ------------
 
+<div align="center">
+    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/0ff80877-7230-4b63-9436-9b793988c8da" width="100" alt="Image 1">
+</div>
+
 ### Build With
 
 - [Android Studio](https://developer.android.com/studio)
