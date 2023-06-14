@@ -83,9 +83,11 @@ We build an android application for end user so everyone can use our application
 - [ ] Clone this Github [repository](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468)
 - [ ] Run all the face scanning model and save in H5 format, or you can download and use this [model](https://drive.google.com/drive/folders/1REkjKwxVPstBOLDIDGNECJGZTUvlIWev?usp=sharing) instead of train it from the beginning 
 - [ ] Go to this directory folder `cd Bangkit-Capstone-C23-PS468/CC/server`
-- [ ] Open your terminal and run this command `python main.py`
+- [ ] Open your terminal and run this command for install all dependencies `pip install -r requirements.txt`
+- [ ] Then, run this following command for activate the server `python main.py`
 - [ ] Check the server response in `http://127.0.0.1:8080/`
-
+- [ ] Open Android Studio and Build Gradle
+- [ ] Done!
 
 ------------
 
