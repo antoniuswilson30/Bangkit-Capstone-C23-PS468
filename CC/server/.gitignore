@@ -2,8 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-scanningmodel.pkl
-templates/
 key.json
 credential.json
 
