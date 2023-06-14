@@ -8,7 +8,7 @@ Glowsist (Glow Assistant) is a SkinCare Recommendation system using AI to help p
 
 The research question we are trying to solve are: How to make this application more user-friendly? What kind of Machine Learning model can give the best recommendation?   Thus, Our project aims to provide a solution to this problem by offering personalized recommendations for skincare ingredients using AI. We are focused on developing a system that can accurately analyze a user's skin type and concerns by scanning their faces and asking several questions. With this application, we are trying to make skincare more accessible and effective for everyone, regardless of their knowledge or experience in the field.
 
-## C23-PS468
+## Glowsist | C23-PS468
 
 | Name | Bangkit ID   |  Learning Path | Profile   |
 | ------------ | ------------ | ------------ | ------------ |
@@ -21,11 +21,9 @@ The research question we are trying to solve are: How to make this application m
 
 ------------
 
-<div align="center">
-    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/0ff80877-7230-4b63-9436-9b793988c8da" width="250" alt="Image 1">
-<h2>Glowsist</h2>
+<div align="left">
+    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/0ff80877-7230-4b63-9436-9b793988c8da" width="200" alt="Image 1">
 </div>
-
 
 ### Build With
 
