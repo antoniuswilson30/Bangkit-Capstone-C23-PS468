@@ -49,18 +49,16 @@ This project use Skin Concerns and SkinCare Ingredients as training and testing 
 We build an android application for end user so everyone can use our application. Also, this project is using Flutter so it can be easier if someone want to develop in IOS.
 
 <div align="center">
-    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/9a17e225-dde0-4835-95d6-dfca168f0637" width="250" alt="Image 1">
-    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/c1fc6a74-4ac2-412e-ae0e-e532354605c3" width="250" alt="Image 2">
-    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/7327e332-6d67-46a1-aee3-ac317386bb11" width="250" alt="Image 3">
+    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/9a17e225-dde0-4835-95d6-dfca168f0637" width="200" alt="Image 1">
+    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/c1fc6a74-4ac2-412e-ae0e-e532354605c3" width="200" alt="Image 2">
+    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/32b11561-f3e4-4a11-99e1-c561f07b14d8" width="200" alt="Image 3">
 </div>
 
 <div align="center">
-    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/caccc66a-4c23-4b37-800c-0b5235bd4a7f" width="250" alt="Image 4">
-    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/4c558eda-4eb9-443e-aa79-14d74939b4ec" width="250" alt="Image 5">
-    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/30054a07-52ee-407e-9767-7fff7297d22a" width="250" alt="Image 6">
+    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/caccc66a-4c23-4b37-800c-0b5235bd4a7f" width="200" alt="Image 4">
+    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/4c558eda-4eb9-443e-aa79-14d74939b4ec" width="200" alt="Image 5">
+    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/30054a07-52ee-407e-9767-7fff7297d22a" width="200" alt="Image 6">
 </div>
-
-
 
 
 ------------
