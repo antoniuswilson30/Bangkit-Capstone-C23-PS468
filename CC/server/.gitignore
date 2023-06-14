@@ -5,6 +5,7 @@ __pycache__/
 scanningmodel.pkl
 templates/
 key.json
+credential.json
 
 
 # C extensions
