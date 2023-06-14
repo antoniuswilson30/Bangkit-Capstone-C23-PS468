@@ -50,7 +50,7 @@ This project use Skin Concerns and SkinCare Ingredients as training and testing 
 We created an API using the Python programming language with the Flask Framework for backend face detection, product recommendations, and fetching datasets from cloud storage.
 
 #### Cloud Run
-For servers, we are using Cloud Run for the backend and Cloud Storage to store datasets and models. We chose to deploy the backend on Cloud Run because it's serverless for our containerized applications in the future, and store datasets and models on Cloud Storage because it's easy to use and low cost.
+For servers, we are using [Cloud Run](https://cloud.google.com/run) for the backend and [Cloud Storage](https://cloud.google.com/storage) to store datasets and models. We chose to deploy the backend on Cloud Run because it's serverless for our containerized applications in the future, and store datasets and models on Cloud Storage because it's easy to use and low cost.
 
 <details>
 <summary>Virtual Machine</summary>
