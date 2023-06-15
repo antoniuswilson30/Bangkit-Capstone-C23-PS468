@@ -39,8 +39,10 @@ The research question we are trying to solve are: How to make this application m
 This project use Skin Concerns and SkinCare Ingredients as training and testing dataset. These datasets are collected from [Ingredients](https://www.kaggle.com/datasets/eward96/skincare-products-and-their-ingredients),  [Acne](https://www.kaggle.com/datasets/nayanchaure/acne-dataset?select=Acne), and  [Dermnet](https://www.kaggle.com/datasets/shubhamgoel27/dermnet). For analyzing face image, this project is using Convolutional Neural Network (CNN) which classifies the image into two classes. To optimize accuracy, this project use [InceptionV3](https://keras.io/api/applications/inceptionv3/) as pre-trained model provided by Keras. The recommendation system use Collaborative Filtering Model to finding most used skincare ingredients based on cosine similarity.
 
 <details>
-<summary>CNN Architecture</summary>
-<img width="504" alt="image" src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/af385a89-9708-46c4-abad-2b6ed0bb914d">
+<summary>CNN Architecture, Parameters, and Results</summary>
+<img alt="acne" src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/87cbee61-93b2-4e3b-a2df-0efa3ead6706">
+<img alt="redness" src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/9c8e0d7e-1209-47af-a0e9-8597a52ab7e8">
+<img alt="skintype" src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/c9eca1a0-7a03-45ac-b96b-5d4b6184721b">
 </details>
 
 ------------
@@ -107,6 +109,12 @@ Or run this following commands one by one for installing TensorFlow:
     pip install --upgrade pip
 	pip install tensorflow
     python -m pip install tensorflow
+
+------------
+
+### Prototype
+
+Try our Glowsist application in this [link](https://drive.google.com/file/d/1TAA-MHia1Bi34eGtWGvVUqyWJjynyvav/view?usp=sharing)
 
 ------------
 
