@@ -3,33 +3,31 @@ import 'package:flutter/material.dart';
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final double fontSize;
-  final double margin = 16.0;
-  final Color backgroundColor = Color(0xFF05729D);
+  final Color textColor = Color(0xFF05729D);
 
   TopBar({required this.title, required this.fontSize});
 
- @override
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      height: kToolbarHeight,
-      margin: EdgeInsets.only(left: margin, right: margin, top: 56.0, bottom: 12.0),
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      padding: EdgeInsets.only(left: 16),
-      alignment: Alignment.centerLeft,
-      child: Text(
+    return AppBar(
+      backgroundColor: Colors.white,
+      titleSpacing: 0,
+      toolbarHeight: 64,
+      title: Text(
         title,
         style: TextStyle(
-          color: Colors.white,
           fontSize: fontSize,
-          fontWeight: FontWeight.bold
+          color: textColor,
+          fontWeight: FontWeight.bold,
         ),
+      ),
+      elevation: 0,
+      iconTheme: IconThemeData(
+        color: Color(0xFF333333),
       ),
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight + (margin * 2));
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }

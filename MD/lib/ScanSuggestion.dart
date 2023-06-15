@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:Glowsist/scanPage.dart';
-import 'components/TopBar.dart';
 
 class ScanSuggestion extends StatelessWidget {
   Future<bool> _requestCameraPermission() async {
@@ -12,10 +11,26 @@ class ScanSuggestion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: null,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        titleSpacing: 0,
+        toolbarHeight: 64,
+        title: Text(
+          'Make your selfie better',
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Color(0xFF05729D),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: Color(0xFF333333),
+        ),
+      ),
       body: Column(
         children: [
-          TopBar(title: 'Make your selfie better', fontSize: 20.0),
           Container(
             margin: EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 24),
             child: Column(
@@ -25,7 +40,7 @@ class ScanSuggestion extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Color(0xFF05729D),
+                      color: Colors.grey.shade300,
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(8),
@@ -133,45 +148,48 @@ class ScanSuggestion extends StatelessWidget {
               ],
             ),
           ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF05729D),
-              padding: EdgeInsets.only(left: 32, right: 32),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              elevation: 0,
-            ),
-            onPressed: () async {
-              bool isCameraPermissionGranted = await _requestCameraPermission();
-              if (isCameraPermissionGranted) {
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ScanPage()),
-                );
-              } else {
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    title: Text('Izin Kamera Diperlukan'),
-                    content: Text(
-                        'Untuk menggunakan fitur ini, izinkan akses kamera.'),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: Text('OK'),
-                      ),
-                    ],
-                  ),
-                );
-              }
-            },
-            child: Text(
-              'Selfie now',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 18.0,
+          Container(
+            width: 250,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFF05729D),
+                padding: EdgeInsets.only(left: 32, right: 32),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                elevation: 0,
+              ),
+              onPressed: () async {
+                bool isCameraPermissionGranted = await _requestCameraPermission();
+                if (isCameraPermissionGranted) {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ScanPage()),
+                  );
+                } else {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text('Izin Kamera Diperlukan'),
+                      content: Text(
+                          'Untuk menggunakan fitur ini, izinkan akses kamera.'),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text('OK'),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+              },
+              child: Text(
+                'Selfie now',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
               ),
             ),
           ),

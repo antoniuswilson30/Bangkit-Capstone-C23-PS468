@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:Glowsist/components/TopBar.dart';
 import 'package:Glowsist/ingredientForm.dart';
 import 'package:Glowsist/scanSuggestion.dart';
 import 'dart:async';
@@ -48,7 +47,7 @@ class _WelcomePageState extends State<WelcomePage> {
             Image.asset(
               'lib/assets/icons/app_icon.png',
               width: 120,
-              height: 120, 
+              height: 120,
             ),
             Text(
               'Glowsist',
@@ -60,9 +59,9 @@ class _WelcomePageState extends State<WelcomePage> {
             Text(
               'Your personal skincare assistant',
               style: TextStyle(
-                fontSize: 14.0,
-                fontStyle: FontStyle.italic,
-                color: Colors.white),
+                  fontSize: 14.0,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.white),
             ),
           ],
         ),
@@ -75,94 +74,212 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: null,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        toolbarHeight: 64,
+        title: Text(
+          'Glowsist',
+          style: TextStyle(
+            fontSize: 28.0,
+            color: Color(0xFF05729D),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        elevation: 0,
+      ),
       body: Column(
         children: [
-          TopBar(title: 'Glowsist', fontSize: 24.0),
-          SizedBox(
-            height: 16,
+          Container(
+            decoration: BoxDecoration(
+              color: Color(0xFF05729D),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            padding: EdgeInsets.all(12),
+            margin: EdgeInsets.all(8),
+            child: Column(
+              children: [
+                Text(
+                  'Welcome !',
+                  style: TextStyle(
+                      fontSize: 24.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  'Find your own best skincare ingredients with Glowsist',
+                  style: TextStyle(fontSize: 14.0, color: Colors.white),
+                ),
+              ],
+            ),
           ),
           Center(
-              child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              child: Column(
             children: [
-              SizedBox(
-                width: 154,
-                height: 192,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ScanSuggestion()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    elevation: 0,
-                    backgroundColor: Colors.transparent,
-                  ),
-                  child: Ink(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('lib/assets/images/feature1.png'),
-                        fit: BoxFit.cover,
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: SizedBox(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ScanSuggestion()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      borderRadius: BorderRadius.circular(8),
+                      elevation: 0,
+                      backgroundColor: Colors.transparent,
                     ),
-                    child: Container(
-                      alignment: Alignment.topLeft,
-                      margin: EdgeInsets.all(12),
-                      child: Text(
-                        'Analisa\nwajahmu',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
+                    child: Ink(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border:
+                              Border.all(color: Colors.grey.shade300, width: 1.0)),
+                      child: Container(
+                        alignment: Alignment.topLeft,
+                        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Analyze your face',
+                              style: TextStyle(
+                                  color: Color(0xFF333333),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Divider(
+                              color: Color(0xFF05729D),
+                            ),
+                            SizedBox(height: 8),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Uses AI to analyze your face for\npimples, redness, and can tell\nyour skin type',
+                                  style: TextStyle(
+                                      fontSize: 12.0, color: Color(0xFF333333)),
+                                ),
+                                Image.asset(
+                                  'lib/assets/images/feature1.png',
+                                  height: 120,
+                                  width: 100,
+                                  fit: BoxFit.fill,
+                                ),
+                              ],
+                            ),
+                            Container(
+                              width: 250,
+                              margin: EdgeInsets.symmetric(vertical: 8),
+                              child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF05729D),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 24.0),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10)),
+                                    elevation: 0,
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ScanSuggestion()),
+                                    );
+                                  },
+                                  child: Text('Analyze now')),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-              SizedBox(
-                width: 154,
-                height: 192,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => IngredientForm()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    elevation: 0,
-                    backgroundColor: Colors.transparent,
-                  ),
-                  child: Ink(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('lib/assets/images/feature2.png'),
-                        fit: BoxFit.cover,
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: SizedBox(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => IngredientForm()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      borderRadius: BorderRadius.circular(8),
+                      elevation: 0,
+                      backgroundColor: Colors.transparent,
                     ),
-                    child: Container(
-                      alignment: Alignment.topLeft,
-                      margin: EdgeInsets.all(12),
-                      child: Text(
-                        'Rekomendasi\nbahan skincare\nuntuk kamu',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
+                    child: Ink(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border:
+                              Border.all(color: Colors.grey.shade300, width: 1.0)),
+                      child: Container(
+                        alignment: Alignment.topLeft,
+                        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Skincare recomendation for you',
+                              style: TextStyle(
+                                  color: Color(0xFF333333),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Divider(
+                              color: Color(0xFF05729D),
+                            ),
+                            SizedBox(height: 8),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Uses AI and your skin profile to provide\nrecommendations for ingredients and\nskincare products that are suitable\nfor your skin profile',
+                                  style: TextStyle(
+                                      fontSize: 12.0, color: Color(0xFF333333)),
+                                ),
+                                Image.asset(
+                                  'lib/assets/images/feature2.png',
+                                  height: 120,
+                                  width: 100,
+                                  fit: BoxFit.fill,
+                                ),
+                              ],
+                            ),
+                            Container(
+                              width: 250,
+                              margin: EdgeInsets.symmetric(vertical: 8),
+                              child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF05729D),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 24.0),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10)),
+                                    elevation: 0,
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => IngredientForm()),
+                                    );
+                                  },
+                                  child: Text('Analyze now')),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
