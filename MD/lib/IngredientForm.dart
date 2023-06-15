@@ -1,6 +1,6 @@
+import 'package:Glowsist/components/TopBar.dart';
 import 'package:flutter/material.dart';
 import 'package:Glowsist/IngredientResult.dart';
-import 'components/TopBar.dart';
 
 class IngredientForm extends StatefulWidget {
   @override
@@ -62,12 +62,13 @@ class _IngredientFormState extends State<IngredientForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: null,
       body: Container(
         constraints: BoxConstraints.expand(),
         child: Column(
           children: [
-            TopBar(title: 'Complete your skin profile', fontSize: 20.0),
+            TopBar(title: 'Complete your skin profile', fontSize: 18.0),
             Expanded(
               child: SingleChildScrollView(
                 child: Container(
@@ -80,7 +81,7 @@ class _IngredientFormState extends State<IngredientForm> {
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Color(0xFF05729D),
+                            color: Colors.grey.shade300,
                             width: 1.0,
                           ),
                           borderRadius: BorderRadius.circular(8),
@@ -131,7 +132,7 @@ class _IngredientFormState extends State<IngredientForm> {
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Color(0xFF05729D),
+                            color: Colors.grey.shade300,
                             width: 1.0,
                           ),
                           borderRadius: BorderRadius.circular(8),
@@ -182,7 +183,7 @@ class _IngredientFormState extends State<IngredientForm> {
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Color(0xFF05729D),
+                            color: Colors.grey.shade300,
                             width: 1.0,
                           ),
                           borderRadius: BorderRadius.circular(8),
@@ -233,7 +234,7 @@ class _IngredientFormState extends State<IngredientForm> {
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Color(0xFF05729D),
+                            color: Colors.grey.shade300,
                             width: 1.0,
                           ),
                           borderRadius: BorderRadius.circular(8),
@@ -281,23 +282,26 @@ class _IngredientFormState extends State<IngredientForm> {
                       ),
                       SizedBox(height: 24),
                       Center(
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF05729D),
-                            padding: EdgeInsets.symmetric(horizontal: 24.0),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                            elevation: 0,
-                          ),
-                          onPressed: () {
-                            submitForm();
-                          },
-                          child: Text(
-                            'Analyze',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.0,
+                        child: Container(
+                          width: 250,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xFF05729D),
+                              padding: EdgeInsets.symmetric(horizontal: 24.0),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                              elevation: 0,
+                            ),
+                            onPressed: () {
+                              submitForm();
+                            },
+                            child: Text(
+                              'Analyze',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18.0,
+                              ),
                             ),
                           ),
                         ),

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:Glowsist/IngredientForm.dart';
 import 'package:Glowsist/main.dart';
-import 'package:Glowsist/components/TopBar.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:convert';
 import 'dart:async';
+
+import 'components/TopBar.dart';
 
 class IngredientResult extends StatelessWidget {
   final Map<String, String> formData;
@@ -101,7 +102,7 @@ class _ResultState extends State<Result> with SingleTickerProviderStateMixin {
       margin: EdgeInsets.all(8),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: BorderSide(color: Color(0xFF05729D), width: 1),
+        side: BorderSide(color: Colors.grey.shade300, width: 1),
       ),
       child: ListTile(
         contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
@@ -140,7 +141,7 @@ class _ResultState extends State<Result> with SingleTickerProviderStateMixin {
       margin: EdgeInsets.all(8),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: BorderSide(color: Color(0xFF05729D), width: 1),
+        side: BorderSide(color: Colors.grey.shade300, width: 1),
       ),
       child: ListTile(
         contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
@@ -192,6 +193,7 @@ class _ResultState extends State<Result> with SingleTickerProviderStateMixin {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Color(0xFF05729D),
                               padding: EdgeInsets.all(8),
+                              elevation: 0,
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -225,9 +227,13 @@ class _ResultState extends State<Result> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: null,
       body: Column(
         children: [
-          TopBar(title: 'Result', fontSize: 20),
+          Container(
+            padding: EdgeInsets.only(left: 16),
+            child: TopBar(title: 'Result', fontSize: 28.0)),
           TabBar(
             controller: _tabController,
             indicatorColor: Colors.black54,

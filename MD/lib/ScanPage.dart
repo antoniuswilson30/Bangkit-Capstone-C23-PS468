@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:image_picker/image_picker.dart';
 import 'ScanResult.dart';
-import 'components/TopBar.dart';
 
 class ScanPage extends StatefulWidget {
   @override
@@ -93,23 +92,39 @@ class _ScanPageState extends State<ScanPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: null,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        titleSpacing: 0,
+        toolbarHeight: 64,
+        title: Text(
+          'Scan your face',
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Color(0xFF05729D),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: Color(0xFF333333),
+        ),
+      ),
       body: Column(
         children: [
-          TopBar(title: 'Scan your face', fontSize: 20.0),
           Container(
             margin: EdgeInsets.only(left: 16, right: 16, top: 16),
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Color(0xFF05729D),
-                width: 5.0,
-              ),
-              borderRadius: BorderRadius.circular(10),
-            ),
             child: CameraPreview(_cameraController),
           ),
           Container(
-            margin: EdgeInsets.only(top: 32.0),
+            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.grey.shade300,
+                width: 1.0,
+              ),
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

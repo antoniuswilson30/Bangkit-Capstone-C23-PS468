@@ -38,6 +38,7 @@ class ScanResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: null,
       body: FutureBuilder<String>(
         future: sendImageToAPI(),
@@ -65,7 +66,7 @@ class ScanResult extends StatelessWidget {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TopBar(title: 'Result', fontSize: 20.0),
+                TopBar(title: 'Result', fontSize: 28.0),
                 Center(
                   child: Container(
                     width: 300,
@@ -84,7 +85,7 @@ class ScanResult extends StatelessWidget {
                         8),
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: Color(0xFF05729D),
+                        color: Colors.grey.shade300,
                         width: 1.0,
                       ),
                       borderRadius: BorderRadius.circular(10),
