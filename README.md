@@ -63,6 +63,11 @@ For servers, we are using [Cloud Run](https://cloud.google.com/run) for the back
 
 We build an android application for end user so everyone can use our application. Also, this project is using Flutter so it can be easier if someone want to develop in IOS.
 
+<details>
+<summary>Flowchart</summary>
+<img alt="image" src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/e2fd1092-8cfe-4cf7-a67c-8ac855f46f1d">
+</details>
+
 <div align="center">
     <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/9a17e225-dde0-4835-95d6-dfca168f0637" width="200" alt="Image 1">
     <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/c1fc6a74-4ac2-412e-ae0e-e532354605c3" width="200" alt="Image 2">
