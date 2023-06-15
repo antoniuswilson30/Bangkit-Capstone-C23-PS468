@@ -1,6 +1,6 @@
 ![bangkit-logo copy](https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/969176ac-f6a2-426e-93bb-0eeb98704762)
 
-![](https://img.shields.io/github/last-commit/antoniuswilson30/Bangkit-Capstone-C23-PS468?style=flat-square) ![](https://img.shields.io/badge/version-1.1.0-lightgrey?style=flat-square) ![](https://img.shields.io/github/release-date/antoniuswilson30/Bangkit-Capstone-C23-PS468?color=yellow&style=flat-square) ![](https://img.shields.io/github/repo-size/antoniuswilson30/Bangkit-Capstone-C23-PS468?label=size&style=flat-square) 
+![](https://img.shields.io/github/last-commit/antoniuswilson30/Bangkit-Capstone-C23-PS468?style=flat-square) ![](https://img.shields.io/badge/version-1.1.0-lightgrey?style=flat-square) ![](https://img.shields.io/github/release-date/antoniuswilson30/Bangkit-Capstone-C23-PS468?style=flat-square) ![](https://img.shields.io/github/repo-size/antoniuswilson30/Bangkit-Capstone-C23-PS468?label=size&style=flat-square) 
 
 ## Overview
 
