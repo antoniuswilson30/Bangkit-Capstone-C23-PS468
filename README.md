@@ -70,7 +70,7 @@ We build an android application for end user so everyone can use our application
 </div>
 
 <div align="center">
-    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/caccc66a-4c23-4b37-800c-0b5235bd4a7f" width="200" alt="Image 4">
+    <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/ca35e2b5-c00f-4d25-8a85-57e29ff2b6a6" width="200" alt="Image 4">
     <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/4c558eda-4eb9-443e-aa79-14d74939b4ec" width="200" alt="Image 5">
     <img src="https://github.com/antoniuswilson30/Bangkit-Capstone-C23-PS468/assets/127605116/30054a07-52ee-407e-9767-7fff7297d22a" width="200" alt="Image 6">
 </div>
