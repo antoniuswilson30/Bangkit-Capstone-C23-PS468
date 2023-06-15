@@ -325,6 +325,9 @@ class _ResultState extends State<Result> with SingleTickerProviderStateMixin {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF05729D),
                     padding: EdgeInsets.only(left: 24.0, right: 24.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)
+                    ),
                     elevation: 0,
                   ),
                   onPressed: () {
@@ -347,13 +350,16 @@ class _ResultState extends State<Result> with SingleTickerProviderStateMixin {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF05729D),
                     padding: EdgeInsets.only(left: 24.0, right: 24.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)
+                    ),
                     elevation: 0,
                   ),
                   onPressed: () {
                     Navigator.pop(context);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MyApp()),
+                      MaterialPageRoute(builder: (context) => HomePage()),
                     );
                   },
                   child: Text(

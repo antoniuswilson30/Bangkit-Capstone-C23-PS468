@@ -19,20 +19,44 @@ class _IngredientFormState extends State<IngredientForm> {
   List<String> sensitivityOptions = ['normal', 'sensitive'];
 
   Future<void> submitForm() async {
-    var formData = {
-      "acne": acneOptions[_selectedOption1!],
-      "redness": rednessOptions[_selectedOption2!],
-      "skintype": skintypeOptions[_selectedOption3!],
-      "sensitivity": sensitivityOptions[_selectedOption4!],
-    };
+    if (_selectedOption1 == null ||
+        _selectedOption2 == null ||
+        _selectedOption3 == null ||
+        _selectedOption4 == null) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Incomplete Form'),
+            content: Text('Please fill in all the options.'),
+            actions: <Widget>[
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      var formData = {
+        "acne": acneOptions[_selectedOption1!],
+        "redness": rednessOptions[_selectedOption2!],
+        "skintype": skintypeOptions[_selectedOption3!],
+        "sensitivity": sensitivityOptions[_selectedOption4!],
+      };
 
-    Navigator.pop(context);
+      Navigator.pop(context);
 
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) => IngredientResult(formData: formData)),
-    );
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => IngredientResult(formData: formData),
+        ),
+      );
+    }
   }
 
   @override
@@ -43,7 +67,7 @@ class _IngredientFormState extends State<IngredientForm> {
         constraints: BoxConstraints.expand(),
         child: Column(
           children: [
-            TopBar(title: 'Lengkapi profil kulit kamu', fontSize: 20.0),
+            TopBar(title: 'Complete your skin profile', fontSize: 20.0),
             Expanded(
               child: SingleChildScrollView(
                 child: Container(
@@ -67,7 +91,7 @@ class _IngredientFormState extends State<IngredientForm> {
                             Text(
                               'Does your face often get pimples ?',
                               style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
+                                  fontSize: 14, fontWeight: FontWeight.bold),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -261,6 +285,8 @@ class _IngredientFormState extends State<IngredientForm> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xFF05729D),
                             padding: EdgeInsets.symmetric(horizontal: 24.0),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
                             elevation: 0,
                           ),
                           onPressed: () {

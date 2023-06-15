@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:Glowsist/components/TopBar.dart';
 import 'package:Glowsist/ingredientForm.dart';
 import 'package:Glowsist/scanSuggestion.dart';
+import 'dart:async';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,59 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Glowsist',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomePage(),
+      home: WelcomePage(),
+    );
+  }
+}
+
+class WelcomePage extends StatefulWidget {
+  @override
+  _WelcomePageState createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 5), () {
+      Navigator.pop(context);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF05729D),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'lib/assets/icons/app_icon.png',
+              width: 120,
+              height: 120, 
+            ),
+            Text(
+              'Glowsist',
+              style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
+            Text(
+              'Your personal skincare assistant',
+              style: TextStyle(
+                fontSize: 14.0,
+                fontStyle: FontStyle.italic,
+                color: Colors.white),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -26,9 +79,11 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           TopBar(title: 'Glowsist', fontSize: 24.0),
-          SizedBox(height: 16,),
+          SizedBox(
+            height: 16,
+          ),
           Center(
-            child: Row(
+              child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(

@@ -80,7 +80,8 @@ class ScanResult extends StatelessWidget {
                 Expanded(
                   child: Container(
                     margin: EdgeInsets.all(16),
-                    padding: EdgeInsets.all(8), // Jarak antara kotak dengan elemen lainnya
+                    padding: EdgeInsets.all(
+                        8),
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: Color(0xFF05729D),
@@ -120,6 +121,8 @@ class ScanResult extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFF05729D),
                           padding: EdgeInsets.only(left: 24.0, right: 24.0),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
                           elevation: 0,
                         ),
                         onPressed: () {
@@ -141,13 +144,15 @@ class ScanResult extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFF05729D),
                           padding: EdgeInsets.only(left: 24.0, right: 24.0),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
                           elevation: 0,
                         ),
                         onPressed: () {
                           Navigator.pop(context);
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => MyApp()),
+                            MaterialPageRoute(builder: (context) => HomePage()),
                           );
                         },
                         child: Text(
@@ -179,7 +184,7 @@ class ScanResult extends StatelessWidget {
         decoration: BoxDecoration(
           color: Color(0xFF05729D),
           borderRadius: BorderRadius.circular(
-              10), // Mengatur radius lingkaran untuk pinggiran bulat
+              10),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,

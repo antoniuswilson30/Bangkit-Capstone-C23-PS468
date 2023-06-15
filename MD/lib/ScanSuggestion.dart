@@ -66,7 +66,7 @@ class ScanSuggestion extends StatelessWidget {
                             width: 100,
                             height: 100,
                           ),
-                          SizedBox(width: 8), // Jarak antara gambar dan teks
+                          SizedBox(width: 8),
                           Text(
                             '2. Tidy your hair back',
                             style: TextStyle(
@@ -137,6 +137,8 @@ class ScanSuggestion extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF05729D),
               padding: EdgeInsets.only(left: 32, right: 32),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
               elevation: 0,
             ),
             onPressed: () async {
